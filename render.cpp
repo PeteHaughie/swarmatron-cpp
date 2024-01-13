@@ -7,21 +7,20 @@
 http://bela.io
 */
 /**
-\example Fundamentals/sinetone/render.cpp
 
-Producing your first bleep!
+Swarmatron
 ---------------------------
 
-This sketch is the hello world of embedded interactive audio. Better known as bleep, it
-produces a sine tone.
+This sketch is an interpetation of the Dewanatron Swarmatron by Pete Haughie.
 
-The frequency of the sine tone is determined by a global variable, `gFrequency`.
-The sine tone is produced by incrementing the phase of a sin function
-on every audio frame.
+It produces a square wave for each voice which follows its sine.
 
-In render() you'll see a nested for loop structure. You'll see this in all Bela projects.
-The first for loop cycles through 'audioFrames', the second through 'audioChannels' (in this case left 0 and right 1).
-It is good to familiarise yourself with this structure as it's fundamental to producing sound with the system.
+If the requency of the note drops below 20hz then it is reduced to 0 to prevent it from introducing rather unpleasant clicks when the spread between voices is low.
+
+It uses two Trill Bar sensors but could potentially use other types of Trill sensors if you so desired. I could imagine a version which uses a single touch on a Square xy + touch size.
+
+Please feel free to build your own and use this sketch as your basis.
+
 */
 
 #include <Bela.h>
